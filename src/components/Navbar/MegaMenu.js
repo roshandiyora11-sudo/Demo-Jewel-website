@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, Gem, Disc, Watch, Sparkles, Star, Gift, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ChevronRight, Gem, Disc, Watch, Sparkles, Star, Gift } from 'lucide-react';
 import './MegaMenu.css';
 
 const MegaMenu = ({ type, isOpen, onClose }) => {
@@ -87,8 +87,8 @@ const MegaMenu = ({ type, isOpen, onClose }) => {
           {/* Bottom Promotional Banner */}
           <div className="mega-bottom-banner">
             <div className="banner-visuals">
-              <img src="/assets/images/p1.png" alt="thumb" />
-              <img src="/assets/images/p2.png" alt="thumb" />
+              <img src={`${process.env.PUBLIC_URL || ''}/assets/images/p1.png`} alt="thumb" />
+              <img src={`${process.env.PUBLIC_URL || ''}/assets/images/p2.png`} alt="thumb" />
             </div>
             <div className="banner-text">
               <h3>Jewellery for Every Moment—See It All Here!</h3>

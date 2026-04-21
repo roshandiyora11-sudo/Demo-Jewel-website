@@ -14,7 +14,7 @@ const StorySection = () => {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            <img src="/assets/images/bridal.png" alt="Craftsmanship" />
+            <img src={`${process.env.PUBLIC_URL || ''}/assets/images/bridal.png`} alt="Craftsmanship" />
             <div className="image-caption">STUDIO SERIES 01</div>
           </motion.div>
           

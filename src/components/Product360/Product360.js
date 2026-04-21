@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Rotate3D, Move, Sparkles, Box } from 'lucide-react';
 import ImageWithFallback from '../Common/ImageWithFallback';
@@ -13,6 +13,9 @@ const Product360 = () => {
   
   // Transform the rotation value into degrees (multiplied for faster spin)
   const rotateY = useTransform(springRotation, [0, 1000], [0, 360 * 5]);
+
+  // Derive shine opacity from rotateY — must be at component level (Rules of Hooks)
+  const shineOpacity = useTransform(rotateY, [0, 180, 360], [0.1, 0.4, 0.1]);
 
   const handleDrag = (event, info) => {
     setIsAutoRotating(false);
@@ -81,9 +84,7 @@ const Product360 = () => {
                 {/* Dynamic Shine Effect */}
                 <motion.div 
                   className="shine-effect-dynamic"
-                  style={{
-                    opacity: useTransform(rotateY, [0, 180, 360], [0.1, 0.4, 0.1])
-                  }}
+                  style={{ opacity: shineOpacity }}
                 />
               </motion.div>
               

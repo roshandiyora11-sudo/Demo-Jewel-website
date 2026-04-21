@@ -6,14 +6,11 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-background">
-        <motion.img 
-          initial={{ scale: 1.15 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 10, ease: "easeOut" }}
-          src="/assets/images/hero.png" 
-          alt="Luxury Jewelry Hero" 
+        <div 
+          className="hero-bg-image"
+          style={{ backgroundImage: `url(${process.env.PUBLIC_URL || ''}/assets/images/hero.png)` }}
         />
-        <div className="hero-overlay"></div>
+        <div className="hero-overlay" />
       </div>
       
       <div className="container hero-container">

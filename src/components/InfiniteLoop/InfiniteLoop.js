@@ -25,7 +25,7 @@ const InfiniteLoop = () => {
           {loopItems.map((item, index) => (
             <div key={index} className="loop-item">
               <div className="image-wrapper">
-                <img src={item.img} alt={item.name} />
+                <img src={`${process.env.PUBLIC_URL || ''}${item.img}`} alt={item.name} />
                 <div className="item-overlay">
                   <span>{item.name}</span>
                 </div>
