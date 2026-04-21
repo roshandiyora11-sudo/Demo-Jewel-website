@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Demo-Jewel-website/static/css/main.69533e54.css",
+    "main.js": "/Demo-Jewel-website/static/js/main.a6d23301.js",
+    "static/js/453.825386d9.chunk.js": "/Demo-Jewel-website/static/js/453.825386d9.chunk.js",
+    "index.html": "/Demo-Jewel-website/index.html",
+    "main.69533e54.css.map": "/Demo-Jewel-website/static/css/main.69533e54.css.map",
+    "main.a6d23301.js.map": "/Demo-Jewel-website/static/js/main.a6d23301.js.map",
+    "453.825386d9.chunk.js.map": "/Demo-Jewel-website/static/js/453.825386d9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.69533e54.css",
+    "static/js/main.a6d23301.js"
+  ]
+}
