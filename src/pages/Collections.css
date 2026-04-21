@@ -1,0 +1,132 @@
+.collections-page {
+  padding-top: 120px;
+  background-color: var(--color-ivory);
+  min-height: 100vh;
+}
+
+.collections-header {
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--spacing-md);
+}
+
+.collections-header h1 {
+  font-size: 3rem;
+  color: var(--color-charcoal);
+  margin-bottom: 1rem;
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+}
+
+.collections-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--spacing-md);
+  padding-bottom: var(--spacing-xl);
+}
+
+/* Sidebar Filters */
+.filters-sidebar {
+  padding: var(--spacing-md);
+  background: white;
+  border-radius: 4px;
+  height: fit-content;
+  position: sticky;
+  top: 120px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.filter-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.filter-group h4 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--color-charcoal);
+  transition: color 0.3s ease;
+}
+
+.filter-option:hover {
+  color: var(--color-gold);
+}
+
+.filter-option span {
+    opacity: 0.6;
+}
+
+.filter-option.active {
+    color: var(--color-gold);
+    font-weight: 500;
+}
+
+/* Active Filters Bar */
+.active-filters-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    padding: 1rem;
+    background: white;
+    border-radius: 4px;
+}
+
+.active-tags {
+    display: flex;
+    gap: 10px;
+}
+
+.tag {
+    background: var(--color-beige);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-charcoal);
+}
+
+/* Results Grid */
+.results-info {
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+.no-results {
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+}
+
+@media (max-width: 992px) {
+  .collections-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .filters-sidebar {
+    display: none; /* Mobile filters could be a drawer */
+  }
+}

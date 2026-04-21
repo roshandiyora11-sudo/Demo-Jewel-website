@@ -1,0 +1,229 @@
+.product-detail-page {
+  padding-top: 100px;
+  min-height: 100vh;
+  background-color: var(--color-ivory);
+}
+
+.detail-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-lg) var(--spacing-md);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Gallery Section */
+.product-gallery-section {
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.main-image-viewport {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+  aspect-ratio: 1;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.full-img-container {
+  width: 100%;
+  height: 100%;
+}
+
+.main-image-viewport img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Thumbnail Strip */
+.thumbnail-strip {
+  display: flex;
+  gap: var(--spacing-sm);
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.thumbnail-box {
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  background: white;
+}
+
+.thumbnail-box:hover {
+  transform: translateY(-2px);
+}
+
+.thumbnail-box.active {
+  border-color: var(--color-gold);
+}
+
+.thumbnail-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.thumbnail-box.active img,
+.thumbnail-box:hover img {
+  opacity: 1;
+}
+
+/* Product Info */
+.product-info-sticky {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.product-brand {
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.product-detail-name {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  color: var(--color-charcoal);
+  margin-top: 0.5rem;
+}
+
+.product-detail-price {
+  font-size: 2rem;
+  font-family: var(--font-sans);
+  color: #83272D;
+  font-weight: 500;
+}
+
+.product-detail-desc {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-charcoal);
+  opacity: 0.7;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-md);
+}
+
+.spec-table {
+  margin-top: var(--spacing-md);
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.spec-label {
+  font-size: 0.85rem;
+  color: var(--color-charcoal);
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.spec-value {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.actions-group {
+  margin-top: var(--spacing-lg);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
+}
+
+.add-to-cart-btn {
+  background-color: #83272D;
+  color: var(--color-white);
+  padding: 1.2rem;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #4E2A28;
+}
+
+.consultation-btn {
+  border: 1px solid #83272D;
+  color: #83272D;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.consultation-btn:hover {
+  background-color: #F8F4F2;
+}
+
+.trust-badges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  color: var(--color-charcoal);
+  opacity: 0.6;
+}
+
+.badge span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 992px) {
+  .detail-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .product-gallery-section {
+    position: relative;
+    top: 0;
+  }
+  
+  .product-detail-name {
+    font-size: 2.5rem;
+  }
+  
+  .trust-badges {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}

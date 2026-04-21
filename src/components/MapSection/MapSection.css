@@ -1,0 +1,143 @@
+.map-section {
+  padding: var(--spacing-xl) 0;
+}
+
+.map-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.info-side .title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.gold-icon {
+  color: var(--color-gold);
+}
+
+.contact-item h4 {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--color-charcoal);
+  line-height: 1.5;
+}
+
+.book-btn {
+  background-color: var(--color-charcoal);
+  color: var(--color-ivory);
+  padding: 1.2rem 2.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: var(--transition-smooth);
+}
+
+.book-btn:hover {
+  background-color: var(--color-gold);
+  color: var(--color-charcoal);
+}
+
+/* Styled Map Card */
+.map-card-styled {
+  background-color: var(--color-white);
+  padding: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+}
+
+.map-placeholder-bg {
+  position: relative;
+  height: 450px;
+  background-color: #f8f9fa;
+  background-image: 
+    linear-gradient(var(--color-beige) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-beige) 1px, transparent 1px);
+  background-size: 40px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pin-highlight {
+  position: relative;
+  color: var(--color-gold);
+}
+
+.main-pin {
+  position: relative;
+  z-index: 2;
+}
+
+.pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: pulsePin 2s infinite;
+}
+
+@keyframes pulsePin {
+  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.3; }
+  100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+.map-footer {
+  padding: 1.5rem 0 0 0;
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #888;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.map-footer:hover {
+  color: var(--color-gold);
+}
+
+@media (max-width: 1024px) {
+  .map-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}

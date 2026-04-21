@@ -1,0 +1,26 @@
+:root {
+  /* Colors */
+  --color-ivory: #FAF8F6;
+  --color-beige: #F2ECE7;
+  --color-charcoal: #1A1A1A;
+  --color-gold: #C6A25A;
+  --color-gold-light: #D4B67E;
+  --color-white: #FFFFFF;
+  --color-border: rgba(26, 26, 26, 0.1);
+
+  /* Typography */
+  --font-serif: 'Playfair Display', serif;
+  --font-accent: 'Cormorant Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Transitions */
+  --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
