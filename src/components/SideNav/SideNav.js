@@ -2,19 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './SideNav.css';
 
+// Move sections outside the component so it's a stable constant
+const sections = [
+  { id: 'home', label: 'Home' },
+  { id: 'features', label: 'Features' },
+  { id: 'story', label: 'Our Story' },
+  { id: 'collections', label: 'Collections' },
+  { id: 'visit', label: 'Visit' },
+  { id: 'app', label: 'Mobile App' },
+];
+
 const SideNav = () => {
   const [activeSection, setActiveSection] = useState('home');
   const location = useLocation();
   const navigate = useNavigate();
-
-  const sections = [
-    { id: 'home', label: 'Home' },
-    { id: 'features', label: 'Features' },
-    { id: 'story', label: 'Our Story' },
-    { id: 'collections', label: 'Collections' },
-    { id: 'visit', label: 'Visit' },
-    { id: 'app', label: 'Mobile App' },
-  ];
 
   useEffect(() => {
     if (location.pathname !== '/') return;
@@ -35,7 +36,7 @@ const SideNav = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [location.pathname]);
+  }, [location.pathname]); // sections is now outside, so it doesn't need to be a dependency
 
   const scrollToSection = (id) => {
     if (location.pathname !== '/') {

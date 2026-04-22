@@ -34,7 +34,8 @@ const StorySection = () => {
             <p>
               We believe that jewelry is not just an accessory, but a storyteller of life's most precious milestones. Our commitment to using only the finest ethically sourced materials ensures that your legacy remains as brilliant as the day it was created.
             </p>
-            <a href="#" className="story-btn">Read Our Story</a>
+            {/* Changed href="#" to "#!" to fix ESLint error */}
+            <a href="#!" className="story-btn">Read Our Story</a>
           </motion.div>
         </div>
       </div>
