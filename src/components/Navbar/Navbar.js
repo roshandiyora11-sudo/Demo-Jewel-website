@@ -28,19 +28,17 @@ const Navbar = () => {
     { name: 'All Jewellery', href: '/collections' },
     { name: 'Gold', href: '/collections?material=gold', type: 'GOLD' },
     { name: 'Diamond', href: '/collections?material=diamond', type: 'DIAMOND' },
-    { name: 'Earrings', href: '/collections?type=earring' },
-    { name: 'Rings', href: '/collections?type=ring' },
-    { name: 'Collections', href: '#collections' },
+    { name: 'Collections', href: '/collections' },
   ];
 
   return (
-    <nav 
+    <nav
       className={`navbar ${isScrolled ? 'scrolled' : ''}`}
       onMouseLeave={() => setActiveMegaMenu(null)}
     >
       <div className="navbar-container container">
         {/* Left: Mobile Toggle */}
-        <button 
+        <button
           className="mobile-menu-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -56,21 +54,14 @@ const Navbar = () => {
         {/* Center-Right: Main Links */}
         <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
           {navLinks.map((link) => (
-            <li 
+            <li
               key={link.name}
               onMouseEnter={() => link.type && setActiveMegaMenu(link.type)}
             >
-              {link.href.startsWith('#') ? (
-                 <a href={`/${link.href}`} className="nav-link-item">
-                  {link.name}
-                  <span className="link-underline"></span>
-                </a>
-              ) : (
                 <Link to={link.href} className="nav-link-item">
                   {link.name}
                   <span className="link-underline"></span>
                 </Link>
-              )}
             </li>
           ))}
         </ul>
@@ -87,10 +78,10 @@ const Navbar = () => {
       {/* Advanced Mega Menu Render */}
       <AnimatePresence>
         {activeMegaMenu && (
-          <MegaMenu 
-            type={activeMegaMenu} 
-            isOpen={true} 
-            onClose={() => setActiveMegaMenu(null)} 
+          <MegaMenu
+            type={activeMegaMenu}
+            isOpen={true}
+            onClose={() => setActiveMegaMenu(null)}
           />
         )}
       </AnimatePresence>

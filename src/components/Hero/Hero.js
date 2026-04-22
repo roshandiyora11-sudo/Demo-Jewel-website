@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
@@ -8,22 +9,22 @@ const Hero = () => {
     target: ref,
     offset: ["start start", "end start"]
   });
-  
+
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
     <section className="hero" ref={ref}>
       <div className="hero-background">
-        <motion.div 
+        <motion.div
           className="hero-bg-image"
-          style={{ 
+          style={{
             backgroundImage: `url(${process.env.PUBLIC_URL || ''}/assets/images/hero.png)`,
-            y 
+            y
           }}
         />
         <div className="hero-overlay" />
       </div>
-      
+
       <div className="container hero-container">
         <div className="hero-content">
           <motion.div
@@ -37,33 +38,27 @@ const Hero = () => {
               <span className="indent">Elegance</span>
             </h1>
             <p className="hero-desc">
-              Discover masterpieces crafted with precision and a legacy of trust. 
+              Discover masterpieces crafted with precision and a legacy of trust.
               The ultimate expression of luxury for your most cherished moments.
             </p>
             <div className="hero-cta-group">
-              <motion.a 
-                href="#collections" 
-                className="cta-button primary"
-                whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(212, 175, 55, 0.4)" }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Explore Collections
-                <span className="btn-line"></span>
-              </motion.a>
-              <motion.a 
-                href="#bridal" 
-                className="cta-button secondary"
-                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.05)" }}
-                whileTap={{ scale: 0.95 }}
-              >
-                View Bridal Edit
-              </motion.a>
+              <motion.div whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(212, 175, 55, 0.4)" }} whileTap={{ scale: 0.95 }}>
+                <Link to="/collections" className="cta-button primary" style={{ display: 'inline-block' }}>
+                  Explore Collections
+                  <span className="btn-line"></span>
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.05)" }} whileTap={{ scale: 0.95 }}>
+                <Link to="/bridal-edit" className="cta-button secondary" style={{ display: 'inline-block' }}>
+                  View Bridal Edit
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         </div>
       </div>
 
-      <motion.div 
+      <motion.div
         className="scroll-indicator"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

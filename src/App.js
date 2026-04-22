@@ -10,6 +10,8 @@ import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import Collections from './pages/Collections';
 
+import BridalEdit from './pages/BridalEdit';
+
 const AnimatedRoutes = () => {
   const location = useLocation();
   return (
@@ -18,6 +20,7 @@ const AnimatedRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/collections" element={<Collections />} />
+        <Route path="/bridal-edit" element={<BridalEdit />} />
       </Routes>
     </AnimatePresence>
   );

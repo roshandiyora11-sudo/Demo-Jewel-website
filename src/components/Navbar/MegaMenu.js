@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ChevronRight, Gem, Disc, Watch, Sparkles, Star, Gift } from 'lucide-react';
+import { ChevronRight, Gem, Disc, Watch, Sparkles, Star, Gift, Heart } from 'lucide-react';
 import './MegaMenu.css';
 
 const MegaMenu = ({ type, isOpen, onClose }) => {
@@ -32,6 +32,18 @@ const MegaMenu = ({ type, isOpen, onClose }) => {
         { name: 'Chains', type: 'necklace', material: 'gold', icon: <Disc size={20} /> },
         { name: 'Bracelets', type: 'bangle', material: 'gold', icon: <Watch size={20} /> },
         { name: 'Pendants', type: 'pendant', material: 'gold', icon: <Star size={20} /> },
+      ]
+    },
+    'Occasion': {
+      DIAMOND: [
+        { name: 'Wedding / Bridal', to: '/bridal-edit', icon: <Heart size={20} /> },
+        { name: 'Daily Wear', type: '', material: 'diamond', icon: <Sparkles size={20} /> },
+        { name: 'Gifting', type: '', material: 'diamond', icon: <Gift size={20} /> },
+      ],
+      GOLD: [
+        { name: 'Wedding / Bridal', to: '/bridal-edit', icon: <Heart size={20} /> },
+        { name: 'Daily Wear', type: '', material: 'gold', icon: <Sparkles size={20} /> },
+        { name: 'Gifting', type: '', material: 'gold', icon: <Gift size={20} /> },
       ]
     }
   };
@@ -69,7 +81,7 @@ const MegaMenu = ({ type, isOpen, onClose }) => {
               {currentItems.length > 0 ? currentItems.map((item, idx) => (
                 <Link 
                   key={idx}
-                  to={`/collections?material=${item.material || ''}&type=${item.type || ''}`}
+                  to={item.to || `/collections?material=${item.material || ''}&type=${item.type || ''}`}
                   className="mega-item-link"
                   onClick={onClose}
                 >

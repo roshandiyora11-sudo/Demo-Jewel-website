@@ -1,0 +1,329 @@
+.bridal-edit-page {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.bridal-hero {
+  height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bridal-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(10, 10, 10, 0.8), transparent);
+}
+
+.bridal-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.editorial-label {
+  display: block;
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+}
+
+.bridal-title {
+  font-size: 5rem;
+  font-family: var(--font-primary);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.bridal-title span {
+  font-style: italic;
+  font-family: var(--font-secondary);
+  color: var(--accent-gold);
+  font-weight: 300;
+  text-transform: none;
+}
+
+.bridal-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3rem;
+  max-width: 500px;
+}
+
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.scroll-hint .line {
+  width: 40px;
+  height: 1px;
+  background-color: var(--accent-gold);
+}
+
+/* Editorial Section */
+.bridal-editorial {
+  padding: 120px 0;
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.editorial-image {
+  position: relative;
+}
+
+.editorial-image img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.editorial-caption {
+  position: absolute;
+  bottom: 20px;
+  right: -20px;
+  background: var(--accent-gold);
+  color: #000;
+  padding: 10px 20px;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  transform: rotate(-90deg);
+  transform-origin: right bottom;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-family: var(--font-primary);
+  margin-bottom: 1.5rem;
+}
+
+.title-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--accent-gold);
+  margin-bottom: 2rem;
+}
+
+.editorial-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2.5rem;
+}
+
+.editorial-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: var(--accent-gold);
+}
+
+/* Product Grid */
+.bridal-collection-grid {
+  padding: 100px 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.grid-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.grid-header p {
+  font-family: var(--font-secondary);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.bridal-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.bridal-product-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  transition: all 0.4s ease;
+}
+
+.bridal-product-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.product-img-wrapper {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.product-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.bridal-product-card:hover .product-img-wrapper img {
+  transform: scale(1.1);
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hover-overlay span {
+  padding: 12px 24px;
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+}
+
+.bridal-product-card:hover .hover-overlay {
+  opacity: 1;
+}
+
+.product-meta {
+  padding: 25px;
+  text-align: center;
+}
+
+.product-meta h3 {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.product-meta .material {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.product-meta .price {
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* CTA Section */
+.bridal-cta {
+  padding: 120px 0;
+  text-align: center;
+}
+
+.cta-glass-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 80px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-glass-box h3 {
+  font-size: 2.5rem;
+  font-family: var(--font-primary);
+  margin-bottom: 1rem;
+}
+
+.cta-glass-box p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.gold-btn {
+  background: var(--accent-gold);
+  color: #000;
+  border: none;
+  padding: 15px 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.gold-btn:hover {
+  background: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+@media (max-width: 992px) {
+  .bridal-title { font-size: 3.5rem; }
+  .editorial-grid { grid-template-columns: 1fr; gap: 40px; }
+  .editorial-text { text-align: center; }
+  .title-divider { margin: 0 auto 2rem; }
+  .editorial-features { align-items: center; }
+}
+
+@media (max-width: 576px) {
+  .bridal-title { font-size: 2.5rem; }
+  .bridal-hero { height: 70vh; }
+  .cta-glass-box { padding: 40px 20px; }
+}
