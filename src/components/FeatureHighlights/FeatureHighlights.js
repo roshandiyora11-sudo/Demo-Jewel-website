@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ShieldCheck, Truck, Star } from 'lucide-react';
 import './FeatureHighlights.css';
 
@@ -14,11 +15,18 @@ const FeatureHighlights = () => {
       <div className="container">
         <div className="features-grid">
           {features.map((f, i) => (
-            <div key={i} className="feature-item">
+            <motion.div 
+              key={i} 
+              className="feature-item"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: i * 0.2 }}
+            >
               <div className="feature-icon">{f.icon}</div>
               <h3>{f.title}</h3>
               <p>{f.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

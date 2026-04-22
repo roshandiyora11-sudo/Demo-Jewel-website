@@ -40,7 +40,19 @@
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-  transition: var(--transition-smooth);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.loop-track:hover .image-wrapper {
+  filter: blur(3px) brightness(0.7);
+  transform: scale(0.98);
+}
+
+.loop-track .image-wrapper:hover {
+  filter: blur(0) brightness(1.05);
+  transform: scale(1.03);
+  z-index: 10;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .image-wrapper img {

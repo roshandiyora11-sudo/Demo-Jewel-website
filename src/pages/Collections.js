@@ -42,7 +42,13 @@ const Collections = () => {
   };
 
   return (
-    <div className="collections-page">
+    <motion.main 
+      className="collections-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+    >
       <div className="container">
         <header className="collections-header">
           <div className="breadcrumb">HOME / COLLECTIONS</div>
@@ -165,7 +171,7 @@ const Collections = () => {
           </main>
         </div>
       </div>
-    </div>
+    </motion.main>
   );
 };
 

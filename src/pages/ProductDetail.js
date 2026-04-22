@@ -30,7 +30,13 @@ const ProductDetail = () => {
   const gallery = product.gallery || [product.img];
 
   return (
-    <div className="product-detail-page">
+    <motion.main 
+      className="product-detail-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+    >
       <div className="container">
         <Link to="/" className="back-link">
           <ArrowLeft size={16} /> <span>BACK TO COLLECTIONS</span>
@@ -140,7 +146,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
-    </div>
+    </motion.main>
   );
 };
 
